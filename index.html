@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>FAQ – Školní řád GYBY 2025/2026</title>
+<title>FAQ – Školní a klasifikační řád GYBY 2025/2026</title>
 <style>:root{
   --bg:#f6f7fb;--bg2:#eef4ff;--card:#fff;--text:#172033;--muted:#667085;--line:#d9deea;
   --brand:#2457c5;--brand2:#eef4ff;--brandLine:#c9dbff;--answer:#273247;
@@ -32,44 +32,42 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 @media(max-width:900px){.toolbar{grid-template-columns:1fr 1fr}.toolbar input{grid-column:1/-1}}
 @media(max-width:720px){.toolbar{grid-template-columns:1fr}.wrap{padding:16px}button{width:100%}}
 
-/* ÚPRAVA: přepínač režimu vpravo nahoře */
-#themeToggle{
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 9999;
-  box-shadow: var(--softShadow);
-}
-
-/* Aby horní sticky lišta nepřekryla pevné tlačítko na malých obrazovkách */
-@media(max-width:720px){
-  #themeToggle{
-    width: auto;
-    max-width: calc(100vw - 28px);
-  }
-}
-
+.doc-switch{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
+.doc-tab{border:1px solid var(--brandLine);background:var(--chip);color:var(--brand);border-radius:999px;padding:11px 16px;font-weight:900;box-shadow:var(--softShadow)}
+.doc-tab.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.doc-panel{display:none}.doc-panel.active{display:block}.doc-head{margin:18px 0 12px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--softShadow)}.doc-head h2{margin:0 0 6px;font-size:22px}.doc-head p{margin:0;color:var(--muted)}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:9999;box-shadow:var(--softShadow)}
+@media(max-width:720px){#themeToggle{width:auto;max-width:calc(100vw - 28px)}}
 </style>
 </head>
 <body>
-<button class="secondary" id="themeToggle" aria-pressed="false">🌙 Tmavý režim</button>
+<button class="secondary" id="themeToggle" aria-pressed="false">Tmavý režim</button>
 <div class="wrap">
 <header class="hero">
-<div class="kicker">FAQ ze školního řádu • GYBY 2025/2026</div>
-<h1>Nejčastější otázky ke školnímu řádu</h1>
-<p class="lead">Stránka je zpracovaná podle dokumentu <strong>Školní řád Gymnázia Brno-Bystrc, příspěvkové organizace</strong>. Kliknutím na otázku se odpověď rozbalí, dalším kliknutím se zase sbalí. Kliknutím na nadpis tematické oblasti se sbalí nebo rozbalí celá oblast. U každé odpovědi je odkaz na příslušnou stránku PDF s původním odstavcem.</p>
+<div class="kicker">FAQ ze školního a klasifikačního řádu • GYBY 2025/2026</div>
+<h1>Nejčastější otázky ke školním pravidlům</h1>
+<p class="lead">Stránka je zpracovaná podle dokumentů <strong>Školní řád Gymnázia Brno-Bystrc</strong> a <strong>Klasifikační řád Gymnázia Brno-Bystrc</strong>. Nahoře lze přepínat mezi oběma částmi. Kliknutím na otázku se odpověď rozbalí, dalším kliknutím se zase sbalí. Kliknutím na nadpis tematické oblasti se sbalí nebo rozbalí celá oblast. U každé odpovědi je odkaz na příslušnou stránku PDF s původním odstavcem.</p>
 </header>
+<div class="doc-switch" role="tablist" aria-label="Výběr dokumentu">
+<button class="doc-tab active" data-doc="school" role="tab" aria-selected="true">Školní řád</button>
+<button class="doc-tab" data-doc="classification" role="tab" aria-selected="false">Klasifikační řád</button>
+</div>
 <nav class="toolbar">
 <input autocomplete="off" id="search" placeholder="Hledat: absence, mobil, přezůvky, propustka…" type="search"/>
 <button class="secondary" id="openAll">Rozbalit vše</button>
 <button class="secondary" id="collapseSections">Sbalit oblasti</button>
 <button id="closeAll">Sbalit otázky</button>
 </nav>
-<div class="chips">
+<div class="chips doc-chips" data-doc-chips="school">
 <a class="chip" href="#dochazka">Docházka a omlouvání</a><a class="chip" href="#chovani">Chování a režim</a><a class="chip" href="#technika">Mobily a technika</a><a class="chip" href="#bezpecnost">Bezpečnost</a><a class="chip" href="#studium">Studium a práva</a><a class="chip" href="#majetek">Majetek</a><a class="chip" href="#provoz">Provoz školy</a><a class="chip" href="#opatreni">Výchovná opatření</a>
 </div>
+<div class="chips doc-chips" data-doc-chips="classification" style="display:none">
+<a class="chip" href="#kr-prospech">Prospěch</a><a class="chip" href="#kr-podklady">Podklady a známky</a><a class="chip" href="#kr-svp">SVP a nadání</a><a class="chip" href="#kr-nahradni">Náhradní termín</a><a class="chip" href="#kr-komisionalni">Komisionální zkoušky</a><a class="chip" href="#kr-opravne">Opravné zkoušky</a><a class="chip" href="#kr-prezkum">Přezkoumání</a>
+</div>
 <main id="faq">
-<section class="section section-collapsed" id="dochazka"><h2>Docházka a omlouvání <span class="badge">absence</span></h2><div class="grid">
+<div class="doc-panel active" data-doc-panel="school">
+<div class="doc-head"><h2>Školní řád</h2><p>FAQ podle školního řádu Gymnázia Brno-Bystrc pro školní rok 2025/2026.</p></div>
+<section class="section" id="dochazka"><h2>Docházka a omlouvání <span class="badge">absence</span></h2><div class="grid">
 <details><summary>Do kdy musí být doložen důvod absence?</summary><div class="answer">Důvod absence musí žák, u nezletilého žáka zákonný zástupce, doložit třídnímu nebo zastupujícímu učiteli nejpozději do 3 dnů od počátku nepřítomnosti.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod IV.3a, str. 5</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=5" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jak se omlouvají absence v EduPage?</summary><div class="answer">Všechny absence musí zákonní zástupci nezletilých žáků a rodiče zletilých žáků omlouvat prostřednictvím školního informačního systému EduPage.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod IV.3c, str. 5</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=5" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co musí udělat žák po návratu do školy?</summary><div class="answer">Žák je povinen neprodleně po nástupu do vyučování, nejpozději do 3 dnů, doložit třídnímu nebo zastupujícímu učiteli opodstatněnost délky své nepřítomnosti.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod IV.3b, str. 5</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=5" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -87,7 +85,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Může žák opustit školu o obědové přestávce?</summary><div class="answer">Opuštění budovy o přestávce na oběd je povoleno pouze žákům vyššího gymnázia a jen na základě písemné žádosti zletilého žáka nebo zákonného zástupce nezletilého žáka doručené řediteli školy. Žák musí registrovat odchod i návrat svým čipem. Pokud čip nemá, budovu o obědové přestávce opustit nesmí.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod IV.2, str. 5</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=5" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Může uvolněný žák z TV nebýt ve škole?</summary><div class="answer">Pokud je TV na začátku nebo na konci vyučování, uvolněný žák nemusí být po tuto dobu ve škole. Je nutné dodat prokazatelné písemné potvrzení od zákonného zástupce nezletilého žáka nebo od zletilého žáka, že bere na vědomí, že škola po tuto dobu nenese právní odpovědnost. Podobně lze řešit i hodinu uprostřed vyučování.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod IV.1, str. 5</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=5" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="chovani"><h2>Chování a běžný režim <span class="badge">povinnosti</span></h2><div class="grid">
+<section class="section" id="chovani"><h2>Chování a běžný režim <span class="badge">povinnosti</span></h2><div class="grid">
 <details><summary>Kudy se vstupuje do školy a odchází ze školy?</summary><div class="answer">Vstup do budovy a odchod z budovy je povolen pouze hlavním vchodem u vrátnice.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.4, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jak se eviduje příchod a odchod?</summary><div class="answer">Každý žák je povinen při příchodu i odchodu zaznamenat svoji přítomnost na vstupním bezpečnostním zařízení, tedy turniketech, pomocí přiděleného čipu nebo karty ISIC. Registrace cizím čipem není povolena.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.4, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co když žák nemůže použít čip nebo ISIC?</summary><div class="answer">Musí nahlásit svůj příchod i odchod na vrátnici školy. Při ztrátě čipu si musí neprodleně opatřit nový čip.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.5–6, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -105,7 +103,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Jaká pravidla platí ve školní jídelně?</summary><div class="answer">Žáci se chovají ukázněně, dodržují stanovená pravidla, řídí se pokyny učitelů a zaměstnanců kuchyně, udržují jídelnu v čistotě a na jídelní stoly neodkládají části oděvů ani tašky.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.18, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co znamená povinnost používat EduPage a školní mail?</summary><div class="answer">Zákonní zástupci nezletilých žáků, zletilí žáci i nezletilí žáci jsou povinni pravidelně používat školní informační systém EduPage. Zletilí žáci a žáci jsou povinni každý den sledovat školní mail.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.25, str. 2</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="technika"><h2>Mobily, počítače a technika <span class="badge">výuka</span></h2><div class="grid">
+<section class="section" id="technika"><h2>Mobily, počítače a technika <span class="badge">výuka</span></h2><div class="grid">
 <details><summary>Smí se ve výuce používat mobilní telefon?</summary><div class="answer">V době výuky není dovoleno používat mobilní telefony, chytré hodinky, fotoaparáty, sluchátka a nahrávací zařízení. Výjimkou je využití pro vlastní výuku podle pokynů vyučujícího. Telefony musí být vypnuté a uložené v tašce nebo batohu.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.9, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Smí se mobil nebo notebook nabíjet ze školní zásuvky?</summary><div class="answer">Bez souhlasu vyučujícího není dovoleno zapojovat mobilní telefony, počítače ani podobná zařízení do zásuvek.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.9–10, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Ruší škola za ztrátu telefonu?</summary><div class="answer">Škola neručí za ztrátu telefonu v případě, že ho žák neměl u sebe.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod I.9, str. 1</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -113,7 +111,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Může žák používat mobil o přestávce?</summary><div class="answer">Ano, školní řád uvádí právo žáků v době přestávek používat vlastní mobilní telefon, výpočetní techniku apod. V době vyučování musí být mobil vypnutý, pokud vyučující nedá pokyn k jeho využití pro výuku.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod II.5j, str. 2</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Smí se pořizovat fotografie a nahrávky bez souhlasu?</summary><div class="answer">Hrubé slovní a úmyslné fyzické útoky a pořizování fotografií a nahrávek bez souhlasu osob, kterých se týkají, se vždy považují za závažné zaviněné porušení povinností stanovených školním řádem.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.f, str. 8</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=8" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="bezpecnost"><h2>Bezpečnost, zdraví a prevence <span class="badge">zákazy</span></h2><div class="grid">
+<section class="section" id="bezpecnost"><h2>Bezpečnost, zdraví a prevence <span class="badge">zákazy</span></h2><div class="grid">
 <details><summary>Musí se žáci přezouvat?</summary><div class="answer">Ano. Žáci vstupují do školy s očištěnou obuví a hned po příchodu se povinně přezouvají v šatně do vhodné obuvi. Sportovní obuv nejsou přezůvky. Kozačky a vysoká obuv jsou z hygienických a zdravotních důvodů jako přezutí nepřípustné.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod V.3, str. 6</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=6" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jak se ukládají boty a kabáty?</summary><div class="answer">Obuv a kabáty si žáci odkládají do přidělené šatní skříňky, kterou jsou povinni uzamknout.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod V.3, str. 6</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=6" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jaká pravidla platí pro oblečení?</summary><div class="answer">Žáci chodí vhodně a čistě oblečeni a upraveni.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod V.4, str. 6</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=6" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -127,7 +125,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Jaká pravidla platí při školních akcích mimo budovu?</summary><div class="answer">Při akcích mimo budovu školy se žáci řídí pravidly silničního provozu a pokyny doprovázejících osob. Před akcemi jsou zvlášť poučeni o bezpečnosti.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod V.12 a V.18, str. 6</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=6" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co je nutné pro školní výjezd do zahraničí?</summary><div class="answer">Škola zařadí na výjezd do zahraničí jen žáky s pojištěním odpovědnosti za škodu platným v příslušném státě a s pojištěním léčebných výloh v zahraničí. Při výjezdu do členského státu EU postačí Evropský průkaz zdravotního pojištění nebo potvrzení tento průkaz nahrazující. U nezletilých žáků je nutný písemný souhlas zákonného zástupce.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod V.14, str. 6</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=6" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="studium"><h2>Studium, práva a změny ve vzdělávání <span class="badge">žák</span></h2><div class="grid">
+<section class="section" id="studium"><h2>Studium, práva a změny ve vzdělávání <span class="badge">žák</span></h2><div class="grid">
 <details><summary>Jaká základní práva mají žáci?</summary><div class="answer">Žáci mají právo na vzdělávání a školské služby, na informace a poradenskou pomoc školy, na informace o průběhu a výsledcích vzdělávání, na vyjádření ke všem rozhodnutím týkajícím se podstatných záležitostí jejich vzdělávání a na další práva uvedená ve školském zákoně a školním řádu.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod II.1, str. 2</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Mohou žáci zakládat samosprávné orgány?</summary><div class="answer">Ano. Žáci mohou v rámci školy zakládat samosprávné orgány, volit a být do nich voleni, pracovat v nich a jejich prostřednictvím se obracet na ředitele školy. Ředitel se jejich stanovisky a vyjádřeními musí zabývat.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod II.1f, str. 2</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Mají zákonní zástupci právo na informace?</summary><div class="answer">Ano. Na uvedená práva, s výjimkou práva na vzdělávání a práva zakládat žákovské samosprávné orgány, mají nárok také zákonní zástupci nezletilých žáků. U zletilých žáků mají právo na informace také rodiče nebo osoby, které vůči žákovi plní vyživovací povinnost.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod II.2–3, str. 2</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -142,14 +140,14 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Jaké možnosti má nadaný nebo mimořádně nadaný žák?</summary><div class="answer">Může mít plán pedagogické podpory, individuální vzdělávací plán, odlišnou úpravu organizace vzdělávání a v případě sportovního nadání individuální studijní plán.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod III.13–14, str. 3</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Kdy škola poskytuje distanční vzdělávání?</summary><div class="answer">Škola poskytuje vzdělávání distančně, pokud je v důsledku krizových nebo mimořádných opatření nebo z důvodu karantény znemožněna osobní přítomnost žáků celé třídy ve škole. V ostatních případech škola nemá povinnost distanční vzdělávání poskytovat.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod III.19, str. 4</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="majetek"><h2>Majetek školy <span class="badge">odpovědnost</span></h2><div class="grid">
+<section class="section" id="majetek"><h2>Majetek školy <span class="badge">odpovědnost</span></h2><div class="grid">
 <details><summary>Jak mají žáci zacházet se školním majetkem?</summary><div class="answer">Žáci jsou povinni pečovat o školní majetek, dbát na to, aby nedocházelo k jeho poškozování, a každé poškození hlásit třídnímu učiteli nebo pedagogickému dozoru. Škody vzniklé z nedbalosti hradí viník.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VII.1, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co platí pro učebnice a pomůcky?</summary><div class="answer">Žáci jsou povinni hospodárně zacházet s učebnicemi, učebními pomůckami i dalším majetkem školy. Ztracené nebo znehodnocené vypůjčené učebnice musí nahradit.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VII.2, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jak se nahrazuje ztracená nebo zničená učebnice?</summary><div class="answer">Přednostně se škoda nahrazuje uvedením do původního stavu, tedy zakoupením nové učebnice. Pokud to není možné, škola určí, zda požaduje fotokopii nebo náhradu v penězích. Za ztrátu učebnic ponechaných volně v lavicích škola neodpovídá.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VII.3, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Smí žáci přemísťovat nábytek?</summary><div class="answer">Žáci nepřemísťují nábytek ani jiná zařízení bez svolení zaměstnanců školy.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VII.5, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co platí v laboratořích a odborných učebnách?</summary><div class="answer">Žáci dodržují provozní řád odborných učeben a laboratoří, aby nedošlo k úrazu nebo poškození přístrojů a vybavení.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VII.4, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="provoz"><h2>Provoz školy a vyučování <span class="badge">čas</span></h2><div class="grid">
+<section class="section" id="provoz"><h2>Provoz školy a vyučování <span class="badge">čas</span></h2><div class="grid">
 <details><summary>Kdy je budova školy otevřena?</summary><div class="answer">Ve všední dny je budova školy otevřena od 6.40 a uzavírá se po ukončení výuky. V sobotu a neděli je škola uzavřena, kromě pronájmů a školních akcí přesahujících běžnou provozní dobu.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VIII.1, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Kdy se vydává oběd?</summary><div class="answer">Oběd se vydává od 11.15 do 13.30 hodin. Do jídelny a přilehlých prostor mají v době svačinky a oběda přístup strávníci, tedy žáci, kteří mají v daný den zaplacené stravování.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VIII.6, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Co může být na stole v jídelně?</summary><div class="answer">Žáci mají na stole pouze jídlo a pití. Není dovoleno odkládat na stoly jiné věci.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VIII.6, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -157,7 +155,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Kam žáci nesmí vstupovat?</summary><div class="answer">Žákům není dovoleno vstupovat do provozních prostor školy ani do míst určených pouze pro zaměstnance, například kotelny nebo kuchyně. V průběhu vyučování využívají jen učebny a přilehlé prostory podle rozvrhu.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VIII.4, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Kdy mohou žáci vstupovat do kabinetů, sborovny nebo ředitelny?</summary><div class="answer">Do kabinetů vstupují jen pověření žáci za přítomnosti učitele. Do sborovny, ředitelny a kanceláře školy vstupují jen na vyzvání nebo ze závažných studijních, provozních či zdravotních důvodů.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod VIII.5, str. 7</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=7" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
-<section class="section section-collapsed" id="opatreni"><h2>Výchovná opatření a hodnocení chování <span class="badge">kázeň</span></h2><div class="grid">
+<section class="section" id="opatreni"><h2>Výchovná opatření a hodnocení chování <span class="badge">kázeň</span></h2><div class="grid">
 <details><summary>Jaká výchovná opatření může škola udělit?</summary><div class="answer">Výchovným opatřením je pochvala nebo jiné ocenění a kázeňské opatření. Mezi další opatření patří napomenutí třídního učitele, důtka třídního učitele a důtka ředitele školy. Závažná opatření jsou podmíněné vyloučení a vyloučení ze školy.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.a,d, str. 8</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=8" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Kdy může být udělena pochvala?</summary><div class="answer">Za výborné studijní výsledky a reprezentaci školy může být žákovi udělena pochvala třídního učitele nebo ředitele školy. Udělení pochvaly může být na konci školního roku finančně ohodnoceno.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.b, str. 8</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=8" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Kdy může ředitel rozhodnout o podmíněném vyloučení?</summary><div class="answer">Při závažném zaviněném porušení povinností může ředitel školy rozhodnout o podmíněném vyloučení. Stanoví zkušební lhůtu nejdéle na jeden rok. Pokud se žák ve zkušební lhůtě dopustí dalšího zaviněného porušení povinností, může ředitel podle závažnosti rozhodnout o vyloučení.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.e, str. 8</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=8" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
@@ -166,15 +164,83 @@ details{background:var(--card);border:1px solid var(--line);border-radius:18px;b
 <details><summary>Jak se řeší neomluvené hodiny kázeňsky?</summary><div class="answer"><ul><li>1 hodina: napomenutí třídního učitele</li><li>2–3 hodiny: důtka třídního učitele</li><li>4–14 hodin: důtka ředitele školy a 2. stupeň z chování</li><li>15 a více hodin: 3. stupeň z chování a podmíněné vyloučení</li></ul><div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.i, str. 9</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=9" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 <details><summary>Jak se oznamují výchovná opatření?</summary><div class="answer">O udělení nebo uložení výchovného opatření žákovi uvědomí třídní učitel, zastupující učitel nebo ředitel školy zákonného zástupce nezletilého žáka nebo rodiče zletilého žáka. Výchovná opatření se zaznamenávají do dokumentace školy.<div class="origin"><span class="ref">Zdroj: školní řád, čl./bod X.j, str. 9</span><a href="https://gyby.cz/wp-content/uploads/SKOLNI-RAD_GYBY_2025_2026-1.pdf#page=9" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
 </div></section>
+</div>
+<div class="doc-panel" data-doc-panel="classification">
+<div class="doc-head"><h2>Klasifikační řád</h2><p>FAQ podle přílohy č. 1 školního řádu: Klasifikační řád Gymnázia Brno-Bystrc, příspěvkové organizace.</p></div>
+<section class="section section-collapsed" id="kr-prospech"><h2>Prospěch a celkové hodnocení <span class="badge">známky</span></h2><div class="grid">
+<details><summary>Jaké stupně prospěchu se používají v jednotlivých předmětech?</summary><div class="answer">Prospěch se klasifikuje stupni 1 výborný, 2 chvalitebný, 3 dobrý, 4 dostatečný a 5 nedostatečný. Klasifikační řád u každého stupně popisuje míru samostatnosti, chybovosti, schopnost používat vědomosti i práci v laboratorních a praktických cvičeních.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co znamená známka výborný?</summary><div class="answer">Žák je schopen samostatně a bezchybně řešit zadané úkoly, samostatně dedukovat a činit nové závěry ze získaných vědomostí. V laboratorních a praktických cvičeních umí samostatně a správně používat pomůcky, nástroje a přístroje a samostatně vyvozuje závěry.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1, stupeň 1, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co znamená známka dostatečný?</summary><div class="answer">Žák řeší zadané úkoly s nápovědou učitele, umí používat získané vědomosti v dalším studiu a při samostatné práci je schopen určit postup řešení. V praktických činnostech pracuje za pomoci učitele. Zadané práce odevzdává ve stanoveném termínu s vážnými nedostatky nebo po termínu bez podstatných chyb.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1, stupeň 4, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co znamená známka nedostatečný?</summary><div class="answer">Žák ani s nápovědou učitele nedokáže vyřešit zadané úkoly, jeho znalosti a dovednosti neumožňují pokračovat v nové látce, při samostatné práci není schopen naznačit postup řešení a zadané práce neodevzdává ve stanoveném termínu.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1, stupeň 5, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co se píše na vysvědčení, když žáka nelze hodnotit?</summary><div class="answer">Není-li možné žáka z některého předmětu hodnotit, uvede se na vysvědčení místo stupně prospěchu slovo „nehodnocen(a)“. Pokud je žák z předmětu zcela uvolněn, uvede se „uvolněn(a)“.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1a-b, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Smí učitel používat plusy a mínusy?</summary><div class="answer">Ano. Učitel může při průběžné klasifikaci používat motivační znaménka +/- .<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.1c, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak se hodnotí chování žáka?</summary><div class="answer">Chování se hodnotí stupni 1 velmi dobré, 2 uspokojivé a 3 neuspokojivé. Řád rozlišuje běžné dodržování pravidel, závažné nebo opakované přestupky a příkrý rozpor s pravidly slušného chování, který vážně ohrožuje výchovu nebo bezpečnost.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.2, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy žák prospěl s vyznamenáním?</summary><div class="answer">Žák prospěl s vyznamenáním, pokud nemá v žádném povinném předmětu horší klasifikaci než 2 chvalitebný, průměrný prospěch z povinných předmětů není horší než 1,50 a chování je hodnoceno jako velmi dobré.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.3.1, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy žák neprospěl?</summary><div class="answer">Žák neprospěl, pokud je v některém povinném předmětu hodnocen stupněm 5 nedostatečný, pokud není hodnocen za druhé pololetí ani v náhradním termínu, nebo pokud není hodnocen z povinného předmětu vyučovaného pouze v prvním pololetí ani v náhradním termínu.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. I.3.3, str. 1</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=1" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-podklady"><h2>Podklady pro hodnocení a počet známek <span class="badge">klasifikace</span></h2><div class="grid">
+<details><summary>Z čeho učitel získává podklady pro hodnocení?</summary><div class="answer">Podklady se získávají soustavným sledováním výkonů a připravenosti žáka, různými druhy zkoušek, ústním zkoušením, předepsanými písemnými nebo grafickými pracemi, analýzou aktivity ve výuce, pozornosti, zájmu o předmět, odborných exkurzí, laboratorních protokolů a dalších činností.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.a-e, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Musí učitel oznámit výsledek ústního zkoušení hned?</summary><div class="answer">Ano. Po ústním, pohybovém a praktickém ověření schopností a dovedností oznámí učitel výsledek hodnocení okamžitě.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.g, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Do kdy musí být oznámeny výsledky písemných prací a projektů?</summary><div class="answer">Výsledky písemných prací, grafických prací a projektů oznámí učitel žákovi nejpozději do 14 dnů. V tomto termínu mu opravené práce také předloží.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.h, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Do kdy mají být známky zapsány do EduPage?</summary><div class="answer">Učitelé jsou povinni zapisovat známky do informačního systému EduPage vždy do konce každého týdne.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.i, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Může být v jednom dni více velkých písemných prací?</summary><div class="answer">U čtvrtletních, pololetních nebo ročníkových písemných či grafických prací předepsaných vzdělávacím plánem platí, že termín se oznamuje předem a v jednom dni mohou žáci konat pouze jednu zkoušku tohoto charakteru.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.d, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kolik známek musí být za pololetí?</summary><div class="answer">Při jednohodinové týdenní dotaci jsou minimem 3 známky, při dvouhodinové dotaci 4 známky a při tříhodinové a vyšší dotaci minimálně 5 známek. Ve druhém pololetí maturitního ročníku může vyučující počet známek snížit, nejnižší možný počet jsou 3 známky za pololetí.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.l, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Hodnotí se jen testy a ústní zkoušení?</summary><div class="answer">Ne. Klasifikace nespočívá pouze v ústním a písemném zkoušení. Vyučující hodnotí také aktivitu žáka, domácí přípravu, schopnost formulovat vlastní názor, samostatné práce a přípravu na vyučování.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.p, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Může chování ovlivnit známku z předmětu?</summary><div class="answer">Ne. Klasifikaci výsledků ve vyučovacích předmětech neovlivňuje chování žáka.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.n, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co platí, když se na předmětu podílí více vyučujících nebo má více částí?</summary><div class="answer">Aby žák dosáhl známky nejhůře dostatečné, musí prospět u všech vyučujících, případně ze všech částí předmětu.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.o, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Hodnotí se žáci hned po návratu po delší nepřítomnosti?</summary><div class="answer">Vyučující dodržuje zásady pedagogického taktu, zejména nehodnotí žáky ihned po návratu do školy po nepřítomnosti jeden týden a déle.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.j, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak dlouho se archivují písemné práce?</summary><div class="answer">Učitel archivuje písemné práce hodnocené známkou, případně další práce dokládající žákovu práci v předmětu. Archivace končí nejdříve tři měsíce po ukončení klasifikace za dané období.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. II.q, str. 2</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=2" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-svp"><h2>Žáci se SVP, sociálním znevýhodněním a nadáním <span class="badge">podpora</span></h2><div class="grid">
+<details><summary>Jak se hodnotí žáci se speciálními vzdělávacími potřebami?</summary><div class="answer">Při hodnocení se přihlíží k charakteru speciálních vzdělávacích potřeb. Vyučující respektují podpůrná opatření nastavená školou nebo školským poradenským zařízením a volí vhodné a přiměřené způsoby získávání podkladů podle schopností žáka.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. III.a, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak se hodnotí žáci z odlišného kulturního prostředí nebo se sociálním znevýhodněním?</summary><div class="answer">Vyučující při učení, hodnocení a klasifikaci respektují obecné zásady dané školním vzdělávacím programem.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. III.b, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak se hodnotí mimořádně nadaní žáci?</summary><div class="answer">U prokazatelně mimořádně nadaných žáků vyučující respektují doporučení školského poradenského zařízení, obecné zásady školního vzdělávacího programu a případné konkrétní podmínky stanovené individuálním vzdělávacím plánem.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. III.c, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-nahradni"><h2>Náhradní termín a neklasifikace <span class="badge">absence</span></h2><div class="grid">
+<details><summary>Co když nelze žáka hodnotit na konci prvního pololetí?</summary><div class="answer">Ředitel školy určí náhradní termín tak, aby hodnocení za první pololetí proběhlo nejpozději do června. Pokud žáka nelze hodnotit ani v náhradním termínu, za první pololetí se nehodnotí. Pokud jde o povinný předmět vyučovaný pouze v prvním pololetí a žák není hodnocen ani v náhradním termínu, neprospěl.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.a, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co když nelze žáka hodnotit na konci druhého pololetí?</summary><div class="answer">Ředitel školy určí náhradní termín tak, aby hodnocení za druhé pololetí proběhlo nejpozději do konce září následujícího školního roku. Do té doby žák navštěvuje nejbližší vyšší ročník. Není-li hodnocen ani v tomto termínu, neprospěl.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.b, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy může být žák neklasifikován kvůli absenci nebo nesplnění požadavků?</summary><div class="answer">Pokud žák zamešká 25 % a více výuky v jednotlivém předmětu, nemá dostatek známek nebo nesplnil všechny požadavky vyučujícího na klasifikaci, může jej vyučující neklasifikovat. Žák pak vykoná náhradní zkoušku k uzavření klasifikace v náhradním termínu.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.c, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Lze náhradní zkoušku udělat do 30. 6.?</summary><div class="answer">Pokud zameškání v daném předmětu nepřevýší 30 %, může ředitel školy na žádost zletilého žáka nebo zákonného zástupce nezletilého žáka stanovit přezkoušení v termínu do 30. 6.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.c, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak se hodnotí náhradní zkouška?</summary><div class="answer">Vyučující zvolí adekvátní způsob prověření znalostí, posoudí aktivitu ve výuce a získané známky a přihlíží zejména k výsledku náhradní zkoušky. Zkoušející sdělí známku z náhradní zkoušky i výslednou známku z předmětu nejpozději následující pracovní den.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.d, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co když se žák k náhradní zkoušce nedostaví?</summary><div class="answer">Pokud se žák nedostaví a zvlášť závažný důvod neoznámí nejpozději následující den po termínu zkoušky, je hodnocen dílčí známkou nedostatečně. Výsledná známka se stanoví podle pravidel pro náhradní zkoušku.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IV.e, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-komisionalni"><h2>Komisionální zkouška <span class="badge">komise</span></h2><div class="grid">
+<details><summary>Kdy žák koná komisionální zkoušku?</summary><div class="answer">Komisionální zkoušku koná žák tehdy, když koná opravné zkoušky, nebo když zletilý žák či zákonný zástupce nezletilého žáka požádá ředitele školy o přezkoumání výsledku hodnocení z důvodu pochybností o správnosti hodnocení.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. V.1, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kolik komisionálních zkoušek může žák konat v jednom dni?</summary><div class="answer">Žák může v jednom dni konat nejvýše jednu komisionální zkoušku.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. V.1c, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdo tvoří komisi pro opravné zkoušky?</summary><div class="answer">Komise je nejméně tříčlenná. Předsedou je ředitel školy nebo pověřený učitel, dále je členem zkoušející učitel daného předmětu a přísedící s odbornou kvalifikací pro výuku téhož nebo příbuzného předmětu. Členy komise jmenuje ředitel školy.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. V.2, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy se vyhlašuje výsledek komisionální zkoušky?</summary><div class="answer">Výsledek zkoušky vyhlásí předseda komise veřejně v den konání zkoušky.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. V.2, str. 3</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=3" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-opravne"><h2>Opravné zkoušky <span class="badge">neprospěch</span></h2><div class="grid">
+<details><summary>Kdo koná opravnou zkoušku?</summary><div class="answer">Opravnou zkoušku koná žák, který na konci druhého pololetí neprospěl nejvýše ze dvou povinných předmětů, nebo žák, který na konci prvního pololetí neprospěl nejvýše ze dvou předmětů vyučovaných pouze v prvním pololetí.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VI.a, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Do kdy se koná opravná zkouška?</summary><div class="answer">Opravná zkouška se koná nejpozději do konce příslušného školního roku v termínu stanoveném ředitelem školy. Opravné zkoušky jsou komisionální.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VI.a, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Co když žák opravnou zkoušku neudělá nebo na ni nepřijde?</summary><div class="answer">Žák, který nevykoná opravnou zkoušku úspěšně nebo se k jejímu konání nedostaví, neprospěl. Ze závažných důvodů může ředitel školy stanovit náhradní termín opravné zkoušky nejpozději do konce září následujícího školního roku.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VI.c, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+<section class="section section-collapsed" id="kr-prezkum"><h2>Přezkoumání výsledků hodnocení <span class="badge">odvolání</span></h2><div class="grid">
+<details><summary>Do kdy lze požádat o přezkoumání hodnocení?</summary><div class="answer">Má-li zletilý žák nebo zákonný zástupce nezletilého žáka pochybnosti o správnosti hodnocení na konci pololetí, může požádat do tří pracovních dnů ode dne, kdy se o hodnocení prokazatelně dozvěděl, nejpozději však do tří pracovních dnů od vydání vysvědčení.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VII.a, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy proběhne komisionální přezkoušení?</summary><div class="answer">Komisionální přezkoušení se koná bez zbytečného odkladu, nejpozději do 14 dnů od doručení žádosti, nebo v termínu dohodnutém se zletilým žákem či zákonným zástupcem nezletilého žáka.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VII.a, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Jak se postupuje u přezkoumání chování nebo výchovných předmětů?</summary><div class="answer">U hodnocení chování nebo předmětů výchovného zaměření se posuzuje dodržení pravidel hodnocení podle klasifikačního řádu. Pokud byla pravidla porušena, výsledek se změní; pokud porušena nebyla, výsledek se potvrdí, nejpozději do 14 dnů od doručení žádosti.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VII.c, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kolikrát může být žák z jednoho předmětu v pololetí přezkoušen?</summary><div class="answer">V případě pochybností o správnosti hodnocení může být žák v příslušném pololetí z daného předmětu komisionálně přezkoušen pouze jednou.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. VII.d, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy se koná zkouška k prokázání odpovídajících znalostí?</summary><div class="answer">Koná se tehdy, když žák po ukončení přerušení studia požádá o možnost studovat ve vyšším ročníku a ředitel jeho žádosti vyhoví za předpokladu, že žák prokáže odpovídající znalosti.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. IX, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+<details><summary>Kdy klasifikační řád nabývá účinnosti?</summary><div class="answer">Klasifikační řád byl schválen školskou radou dne 29. 8. 2025 a nabývá účinnosti dnem 1. 9. 2025.<div class="origin"><span class="ref">Zdroj: klasifikační řád, čl. X, str. 4</span><a href="https://gyby.cz/wp-content/uploads/KLASIFIKACNI_RAD_GYBY_2025_2026-1.pdf#page=4" rel="noopener" target="_blank">Otevřít původní odstavec v PDF</a></div></div></details>
+</div></section>
+</div>
 </main>
-<footer class="source">Zdroj: Školní řád Gymnázia Brno-Bystrc, příspěvkové organizace, školní rok 2025/2026. Tato stránka je pracovní FAQ přepis a přehled; při sporu je závazné původní znění dokumentu.</footer>
+<footer class="source">Zdroje: Školní řád GYBY 2025/2026 a Klasifikační řád GYBY 2025/2026. FAQ je zjednodušená navigační pomůcka; rozhodující je původní znění dokumentů.</footer>
 </div>
 <script>
 const q=document.getElementById('search');
-const details=[...document.querySelectorAll('details')];
-const sections=[...document.querySelectorAll('.section')];
 const themeBtn=document.getElementById('themeToggle');
 const collapseSectionsBtn=document.getElementById('collapseSections');
+const docTabs=[...document.querySelectorAll('.doc-tab')];
+const docPanels=[...document.querySelectorAll('.doc-panel')];
+const docChips=[...document.querySelectorAll('.doc-chips')];
+let activeDoc='school';
+
+function currentPanel(){ return document.querySelector(`.doc-panel[data-doc-panel="${activeDoc}"]`); }
+function allDetails(){ return [...document.querySelectorAll('details')]; }
+function allSections(){ return [...document.querySelectorAll('.section')]; }
+function activeDetails(){ return [...currentPanel().querySelectorAll('details')]; }
+function activeSections(){ return [...currentPanel().querySelectorAll('.section')]; }
 
 function setTheme(mode){
   document.body.classList.toggle('dark', mode==='dark');
@@ -182,45 +248,74 @@ function setTheme(mode){
   themeBtn.setAttribute('aria-pressed', mode==='dark');
   localStorage.setItem('faqTheme', mode);
 }
-const savedTheme=localStorage.getItem('faqTheme');
-const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+setTheme(localStorage.getItem('faqTheme') || 'light');
 themeBtn.onclick=()=>setTheme(document.body.classList.contains('dark') ? 'light' : 'dark');
 
-sections.forEach(sec=>{
-  const heading=sec.querySelector('h2');
-  heading.setAttribute('tabindex','0');
-  heading.setAttribute('role','button');
-  heading.setAttribute('aria-expanded','true');
-  const toggle=()=>{
-    sec.classList.toggle('section-collapsed');
-    heading.setAttribute('aria-expanded', !sec.classList.contains('section-collapsed'));
-  };
-  heading.addEventListener('click', toggle);
-  heading.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
-});
+function collapseAllSections(){
+  allSections().forEach(sec=>{
+    sec.classList.add('section-collapsed');
+    sec.querySelector('h2')?.setAttribute('aria-expanded','false');
+  });
+  allDetails().forEach(d=>d.open=false);
+  collapseSectionsBtn.textContent='Rozbalit oblasti';
+}
+
+function initSectionToggles(){
+  allSections().forEach(sec=>{
+    const heading=sec.querySelector('h2');
+    heading.setAttribute('tabindex','0');
+    heading.setAttribute('role','button');
+    heading.setAttribute('aria-expanded','false');
+    const toggle=()=>{
+      sec.classList.toggle('section-collapsed');
+      heading.setAttribute('aria-expanded', !sec.classList.contains('section-collapsed'));
+    };
+    heading.addEventListener('click', toggle);
+    heading.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+}
+initSectionToggles();
+
+function setDoc(doc){
+  activeDoc=doc;
+  docTabs.forEach(btn=>{
+    const on=btn.dataset.doc===doc;
+    btn.classList.toggle('active',on);
+    btn.setAttribute('aria-selected',on?'true':'false');
+  });
+  docPanels.forEach(panel=>panel.classList.toggle('active', panel.dataset.docPanel===doc));
+  docChips.forEach(ch=>ch.style.display = ch.dataset.docChips===doc ? '' : 'none');
+  q.value='';
+  allDetails().forEach(d=>{ d.classList.remove('hidden'); d.open=false; });
+  allSections().forEach(sec=>sec.classList.remove('hidden'));
+  collapseAllSections();
+}
+docTabs.forEach(btn=>btn.addEventListener('click',()=>setDoc(btn.dataset.doc)));
 
 q.addEventListener('input',()=>{
   const s=q.value.trim().toLowerCase();
-  details.forEach(d=>{
+  activeDetails().forEach(d=>{
     const hit=d.innerText.toLowerCase().includes(s);
     d.classList.toggle('hidden',s&&!hit);
     if(s&&hit)d.open=true;
+    if(!s)d.open=false;
   });
-  sections.forEach(sec=>{
+  activeSections().forEach(sec=>{
     const any=[...sec.querySelectorAll('details')].some(d=>!d.classList.contains('hidden'));
     sec.classList.toggle('hidden',s&&!any);
     if(s&&any){ sec.classList.remove('section-collapsed'); sec.querySelector('h2').setAttribute('aria-expanded','true'); }
+    if(!s){ sec.classList.add('section-collapsed'); sec.querySelector('h2').setAttribute('aria-expanded','false'); }
   });
 });
 
 document.getElementById('openAll').onclick=()=>{
-  sections.forEach(sec=>{ if(!sec.classList.contains('hidden')){ sec.classList.remove('section-collapsed'); sec.querySelector('h2').setAttribute('aria-expanded','true'); }});
-  details.filter(d=>!d.classList.contains('hidden')).forEach(d=>d.open=true);
+  activeSections().forEach(sec=>{ if(!sec.classList.contains('hidden')){ sec.classList.remove('section-collapsed'); sec.querySelector('h2').setAttribute('aria-expanded','true'); }});
+  activeDetails().filter(d=>!d.classList.contains('hidden')).forEach(d=>d.open=true);
+  collapseSectionsBtn.textContent='Sbalit oblasti';
 };
-document.getElementById('closeAll').onclick=()=>details.forEach(d=>d.open=false);
+document.getElementById('closeAll').onclick=()=>activeDetails().forEach(d=>d.open=false);
 collapseSectionsBtn.onclick=()=>{
-  const visible=sections.filter(sec=>!sec.classList.contains('hidden'));
+  const visible=activeSections().filter(sec=>!sec.classList.contains('hidden'));
   const collapse=!visible.every(sec=>sec.classList.contains('section-collapsed'));
   visible.forEach(sec=>{ sec.classList.toggle('section-collapsed',collapse); sec.querySelector('h2').setAttribute('aria-expanded',!collapse); });
   collapseSectionsBtn.textContent=collapse?'Rozbalit oblasti':'Sbalit oblasti';
@@ -228,30 +323,15 @@ collapseSectionsBtn.onclick=()=>{
 
 window.addEventListener('hashchange',()=>{
   const sec=document.querySelector(location.hash);
-  if(sec&&sec.classList.contains('section')){ sec.classList.remove('section-collapsed'); sec.querySelector('h2')?.setAttribute('aria-expanded','true'); }
-});
-</script>
-
-<script>
-/* ÚPRAVA: výchozí světlý režim a sbalené tematické oblasti */
-document.addEventListener('DOMContentLoaded', function () {
-  document.body.classList.remove('dark');
-
-  document.querySelectorAll('.section').forEach(function(section){
-    section.classList.add('section-collapsed');
-  });
-
-  document.querySelectorAll('details').forEach(function(detail){
-    detail.open = false;
-  });
-
-  const themeToggleButton = document.getElementById('themeToggle');
-  if (themeToggleButton) {
-    themeToggleButton.textContent = '🌙 Tmavý režim';
-    themeToggleButton.setAttribute('aria-pressed', 'false');
+  if(sec&&sec.classList.contains('section')){
+    const panel=sec.closest('.doc-panel');
+    if(panel?.dataset.docPanel) setDoc(panel.dataset.docPanel);
+    sec.classList.remove('section-collapsed');
+    sec.querySelector('h2')?.setAttribute('aria-expanded','true');
   }
 });
-</script>
 
+collapseAllSections();
+</script>
 </body>
 </html>
